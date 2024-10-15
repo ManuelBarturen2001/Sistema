@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PRODUCTOS</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../resource/css/styleproduct.css">
+
+    <!-- custom js file link  -->
+    <script src="../resource/js/scriptproduct.js" defer></script>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h3 class="title">PRODUCTOS</h3>
+
+        <div class="products-container">
+            <% results.forEach((productos)=> { %>
+                <div class="product" data-name="<%=productos.id%>">
+
+                    <img src="../resource/img/product/<%=productos.imagen %>" alt="<%=productos.imagen %>">
+                    <h3>
+                        <%=productos.nombre%>
+                    </h3>
+                    <div class="price">
+                        S/. <%=productos.precio %>
+                    </div>
+
+                </div>
+            <% }) %>
+        </div>
+
+    </div>
+
+    <div class="products-preview">
+        <% results.forEach((productos)=> { %>
+            <div class="preview" data-target="<%=productos.id %>">
+                <i class="fas fa-times"></i>
+                <img src="../resource/img/product/<%=productos.imagen %>" alt="<%=productos.imagen %>">
+                <h3>
+                    <%=productos.nombre%>
+                </h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>( 250 )</span>
+                </div>
+                <p>
+                    <%=productos.descripcion%>
+                </p>
+                <div class="price">
+                    S/. <%=productos.precio%>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="buy">buy now</a>
+                    <a href="#" class="cart">add to cart</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+
+services:
+  sistema:
+    build: .
+    depends_on:
+      - mysqldb
+    environment:
+      - DB_HOST=mysqldb
+      - DB_USER=barturen
+      - DB_PASSWORD=barturen
+      - DB_DATABASE=sistema
+      - DB_PORT=3306
+    ports:
+      - "4000:4000"
+
+  mysqldb:
+    image: mysql:8.0.39
+    environment:
+      MYSQL_ROOT_PASSWORD: "barturen"
+      MYSQL_DATABASE: "sistema"
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

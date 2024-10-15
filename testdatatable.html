@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link type="text/css" href="../public/css/dataTables.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/2.0.5/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" type="text/Javascript"></script>
+    <title>TEST</title>
+</head>
+
+<body>
+
+            
+    <table id="myTable" class="table table-striped responsive" style="width: 100%;">
+        <thead>
+            <tr>
+                <th _msttexthash="43069" _msthash="32">Name</th>
+                <th _msttexthash="117676" _msthash="33">Position</th>
+                <th _msttexthash="73294" _msthash="34">Office</th>
+                <th _msttexthash="28444" _msthash="35">Age</th>
+                <th _msttexthash="135174" _msthash="36">Start date</th>
+                <th _msttexthash="78065" _msthash="37">Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td _msttexthash="156325" _msthash="38">Tiger Nixon</td>
+                <td _msttexthash="285493" _msthash="39">System Architect</td>
+                <td _msttexthash="133822" _msthash="40">Edinburgh</td>
+                <td _msttexthash="10010" _msthash="41">61</td>
+                <td _msttexthash="73320" _msthash="42">2011-04-25</td>
+                <td _msttexthash="52546" _msthash="43">$320,800</td>
+            </tr>
+            <tr>
+                <td _msttexthash="263367" _msthash="44">Garrett Winters</td>
+                <td _msttexthash="158951" _msthash="45">Accountant</td>
+                <td _msttexthash="63310" _msthash="46">Tokyo</td>
+                <td _msttexthash="10218" _msthash="47">63</td>
+                <td _msttexthash="73827" _msthash="48">2011-07-25</td>
+                <td _msttexthash="53612" _msthash="49">$170,750</td>
+            </tr>
+            <tr>
+                <td _msttexthash="133081" _msthash="50">Ashton Cox</td>
+                <td _msttexthash="481728" _msthash="51">Junior Technical Author</td>
+                <td _msttexthash="199901" _msthash="52">San Francisco</td>
+                <td _msttexthash="10530" _msthash="53">66</td>
+                <td _msttexthash="72917" _msthash="54">2009-01-12</td>
+                <td _msttexthash="43602" _msthash="55">$86,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="174902" _msthash="56">Cedric Kelly</td>
+                <td _msttexthash="649571" _msthash="57">Senior Javascript Developer</td>
+                <td _msttexthash="133822" _msthash="58">Edinburgh</td>
+                <td _msttexthash="9750" _msthash="59">22</td>
+                <td _msttexthash="74113" _msthash="60">2012-03-29</td>
+                <td _msttexthash="52923" _msthash="61">$433,060</td>
+            </tr>
+            <tr>
+                <td _msttexthash="133445" _msthash="62">Airi Satou</td>
+                <td _msttexthash="158951" _msthash="63">Accountant</td>
+                <td _msttexthash="63310" _msthash="64">Tokyo</td>
+                <td _msttexthash="9945" _msthash="65">33</td>
+                <td _msttexthash="74386" _msthash="66">2008-11-28</td>
+                <td _msttexthash="52910" _msthash="67">$162,700</td>
+            </tr>
+            <tr>
+                <td _msttexthash="348179" _msthash="68">Brielle Williamson</td>
+                <td _msttexthash="489489" _msthash="69">Integration Specialist</td>
+                <td _msttexthash="94835" _msthash="70">New York</td>
+                <td _msttexthash="10010" _msthash="71">61</td>
+                <td _msttexthash="72254" _msthash="72">2012-12-02</td>
+                <td _msttexthash="52143" _msthash="73">$372,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="250692" _msthash="74">Herrod Chandler</td>
+                <td _msttexthash="260416" _msthash="75">Sales Assistant</td>
+                <td _msttexthash="199901" _msthash="76">San Francisco</td>
+                <td _msttexthash="10751" _msthash="77">59</td>
+                <td _msttexthash="73944" _msthash="78">2012-08-06</td>
+                <td _msttexthash="52897" _msthash="79">$137,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="227747" _msthash="80">Rhona Davidson</td>
+                <td _msttexthash="489489" _msthash="81">Integration Specialist</td>
+                <td _msttexthash="63310" _msthash="82">Tokyo</td>
+                <td _msttexthash="10335" _msthash="83">55</td>
+                <td _msttexthash="72267" _msthash="84">2010-10-14</td>
+                <td _msttexthash="53612" _msthash="85">$327,900</td>
+            </tr>
+            <tr>
+                <td _msttexthash="205296" _msthash="86">Colleen Hurst</td>
+                <td _msttexthash="416819" _msthash="87">Javascript Developer</td>
+                <td _msttexthash="199901" _msthash="88">San Francisco</td>
+                <td _msttexthash="10569" _msthash="89">39</td>
+                <td _msttexthash="74893" _msthash="90">2009-09-15</td>
+                <td _msttexthash="52390" _msthash="91">$205,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="158509" _msthash="92">Sonya Frost</td>
+                <td _msttexthash="313183" _msthash="93">Software Engineer</td>
+                <td _msttexthash="133822" _msthash="94">Edinburgh</td>
+                <td _msttexthash="9854" _msthash="95">23</td>
+                <td _msttexthash="73320" _msthash="96">2008-12-13</td>
+                <td _msttexthash="52182" _msthash="97">$103,600</td>
+            </tr>
+            <tr>
+                <td _msttexthash="149383" _msthash="98">Jena Gaines</td>
+                <td _msttexthash="220142" _msthash="99">Office Manager</td>
+                <td _msttexthash="77363" _msthash="100">London</td>
+                <td _msttexthash="9633" _msthash="101">30</td>
+                <td _msttexthash="74568" _msthash="102">2008-12-19</td>
+                <td _msttexthash="44655" _msthash="103">$90,560</td>
+            </tr>
+            <tr>
+                <td _msttexthash="157378" _msthash="104">Quinn Flynn</td>
+                <td _msttexthash="176449" _msthash="105">Support Lead</td>
+                <td _msttexthash="133822" _msthash="106">Edinburgh</td>
+                <td _msttexthash="9750" _msthash="107">22</td>
+                <td _msttexthash="72605" _msthash="108">2013-03-03</td>
+                <td _msttexthash="51792" _msthash="109">$342,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="250393" _msthash="110">Charde Marshall</td>
+                <td _msttexthash="314197" _msthash="111">Regional Director</td>
+                <td _msttexthash="199901" _msthash="112">San Francisco</td>
+                <td _msttexthash="10257" _msthash="113">36</td>
+                <td _msttexthash="73606" _msthash="114">2008-10-16</td>
+                <td _msttexthash="52923" _msthash="115">$470,600</td>
+            </tr>
+            <tr>
+                <td _msttexthash="201370" _msthash="116">Haley Kennedy</td>
+                <td _msttexthash="558324" _msthash="117">Senior Marketing Designer</td>
+                <td _msttexthash="77363" _msthash="118">London</td>
+                <td _msttexthash="10036" _msthash="119">43</td>
+                <td _msttexthash="73697" _msthash="120">2012-12-18</td>
+                <td _msttexthash="52351" _msthash="121">$313,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="383227" _msthash="122">Tatyana Fitzpatrick</td>
+                <td _msttexthash="314197" _msthash="123">Regional Director</td>
+                <td _msttexthash="77363" _msthash="124">London</td>
+                <td _msttexthash="10387" _msthash="125">19</td>
+                <td _msttexthash="73242" _msthash="126">2010-03-17</td>
+                <td _msttexthash="54587" _msthash="127">$385,750</td>
+            </tr>
+            <tr>
+                <td _msttexthash="197730" _msthash="128">Michael Silva</td>
+                <td _msttexthash="343824" _msthash="129">Marketing Designer</td>
+                <td _msttexthash="77363" _msthash="130">London</td>
+                <td _msttexthash="10530" _msthash="131">66</td>
+                <td _msttexthash="73515" _msthash="132">2012-11-27</td>
+                <td _msttexthash="53729" _msthash="133">$198,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="110877" _msthash="134">Paul Byrd</td>
+                <td _msttexthash="582218" _msthash="135">Chief Financial Officer (CFO)</td>
+                <td _msttexthash="94835" _msthash="136">New York</td>
+                <td _msttexthash="10322" _msthash="137">64</td>
+                <td _msttexthash="73970" _msthash="138">2010-06-09</td>
+                <td _msttexthash="52364" _msthash="139">$725,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="201851" _msthash="140">Gloria Little</td>
+                <td _msttexthash="462410" _msthash="141">Systems Administrator</td>
+                <td _msttexthash="94835" _msthash="142">New York</td>
+                <td _msttexthash="10751" _msthash="143">59</td>
+                <td _msttexthash="73008" _msthash="144">2009-04-10</td>
+                <td _msttexthash="53001" _msthash="145">$237,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="199017" _msthash="146">Bradley Greer</td>
+                <td _msttexthash="313183" _msthash="147">Software Engineer</td>
+                <td _msttexthash="77363" _msthash="148">London</td>
+                <td _msttexthash="9828" _msthash="149">41</td>
+                <td _msttexthash="72319" _msthash="150">2012-10-13</td>
+                <td _msttexthash="51467" _msthash="151">$132,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="90987" _msthash="152">Dai Rios</td>
+                <td _msttexthash="222664" _msthash="153">Personnel Lead</td>
+                <td _msttexthash="133822" _msthash="154">Edinburgh</td>
+                <td _msttexthash="10153" _msthash="155">35</td>
+                <td _msttexthash="74503" _msthash="156">2012-09-26</td>
+                <td _msttexthash="52767" _msthash="157">$217,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="281021" _msthash="158">Jenette Caldwell</td>
+                <td _msttexthash="278616" _msthash="159">Development Lead</td>
+                <td _msttexthash="94835" _msthash="160">New York</td>
+                <td _msttexthash="9633" _msthash="161">30</td>
+                <td _msttexthash="73359" _msthash="162">2011-09-03</td>
+                <td _msttexthash="52182" _msthash="163">$345,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="136058" _msthash="164">Yuri Berry</td>
+                <td _msttexthash="591162" _msthash="165">Chief Marketing Officer (CMO)</td>
+                <td _msttexthash="94835" _msthash="166">New York</td>
+                <td _msttexthash="9724" _msthash="167">40</td>
+                <td _msttexthash="74581" _msthash="168">2009-06-25</td>
+                <td _msttexthash="52845" _msthash="169">$675,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="171158" _msthash="170">Caesar Vance</td>
+                <td _msttexthash="313014" _msthash="171">Pre-Sales Support</td>
+                <td _msttexthash="94835" _msthash="172">New York</td>
+                <td _msttexthash="9646" _msthash="173">21</td>
+                <td _msttexthash="72319" _msthash="174">2011-12-12</td>
+                <td _msttexthash="53105" _msthash="175">$106,450</td>
+            </tr>
+            <tr>
+                <td _msttexthash="177840" _msthash="176">Doris Wilder</td>
+                <td _msttexthash="260416" _msthash="177">Sales Assistant</td>
+                <td _msttexthash="79456" _msthash="178">Sydney</td>
+                <td _msttexthash="9854" _msthash="179">23</td>
+                <td _msttexthash="72995" _msthash="180">2010-09-20</td>
+                <td _msttexthash="44343" _msthash="181">$85,600</td>
+            </tr>
+            <tr>
+                <td _msttexthash="223379" _msthash="182">Angelica Ramos</td>
+                <td _msttexthash="591539" _msthash="183">Chief Executive Officer (CEO)</td>
+                <td _msttexthash="77363" _msthash="184">London</td>
+                <td _msttexthash="10452" _msthash="185">47</td>
+                <td _msttexthash="74165" _msthash="186">2009-10-09</td>
+                <td _msttexthash="69888" _msthash="187">$1,200,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="152373" _msthash="188">Gavin Joyce</td>
+                <td _msttexthash="135928" _msthash="189">Developer</td>
+                <td _msttexthash="133822" _msthash="190">Edinburgh</td>
+                <td _msttexthash="9932" _msthash="191">42</td>
+                <td _msttexthash="72384" _msthash="192">2010-12-22</td>
+                <td _msttexthash="45890" _msthash="193">$92,575</td>
+            </tr>
+            <tr>
+                <td _msttexthash="220467" _msthash="194">Jennifer Chang</td>
+                <td _msttexthash="314197" _msthash="195">Regional Director</td>
+                <td _msttexthash="135278" _msthash="196">Singapore</td>
+                <td _msttexthash="10374" _msthash="197">28</td>
+                <td _msttexthash="72436" _msthash="198">2010-11-14</td>
+                <td _msttexthash="54340" _msthash="199">$357,650</td>
+            </tr>
+            <tr>
+                <td _msttexthash="224900" _msthash="200">Brenden Wagner</td>
+                <td _msttexthash="313183" _msthash="201">Software Engineer</td>
+                <td _msttexthash="199901" _msthash="202">San Francisco</td>
+                <td _msttexthash="10374" _msthash="203">28</td>
+                <td _msttexthash="73684" _msthash="204">2011-06-07</td>
+                <td _msttexthash="53833" _msthash="205">$206,850</td>
+            </tr>
+            <tr>
+                <td _msttexthash="149747" _msthash="206">Fiona Green</td>
+                <td _msttexthash="592956" _msthash="207">Chief Operating Officer (COO)</td>
+                <td _msttexthash="199901" _msthash="208">San Francisco</td>
+                <td _msttexthash="10556" _msthash="209">48</td>
+                <td _msttexthash="71994" _msthash="210">2010-03-11</td>
+                <td _msttexthash="52169" _msthash="211">$850,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="115154" _msthash="212">Shou Itou</td>
+                <td _msttexthash="344201" _msthash="213">Regional Marketing</td>
+                <td _msttexthash="63310" _msthash="214">Tokyo</td>
+                <td _msttexthash="9542" _msthash="215">20</td>
+                <td _msttexthash="73593" _msthash="216">2011-08-14</td>
+                <td _msttexthash="51948" _msthash="217">$163,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="225797" _msthash="218">Michelle House</td>
+                <td _msttexthash="489489" _msthash="219">Integration Specialist</td>
+                <td _msttexthash="79456" _msthash="220">Sydney</td>
+                <td _msttexthash="10361" _msthash="221">37</td>
+                <td _msttexthash="72644" _msthash="222">2011-06-02</td>
+                <td _msttexthash="44161" _msthash="223">$95,400</td>
+            </tr>
+            <tr>
+                <td _msttexthash="134745" _msthash="224">Suki Burks</td>
+                <td _msttexthash="135928" _msthash="225">Developer</td>
+                <td _msttexthash="77363" _msthash="226">London</td>
+                <td _msttexthash="10127" _msthash="227">53</td>
+                <td _msttexthash="73099" _msthash="228">2009-10-22</td>
+                <td _msttexthash="52273" _msthash="229">$114,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="321256" _msthash="230">Prescott Bartlett</td>
+                <td _msttexthash="282997" _msthash="231">Technical Author</td>
+                <td _msttexthash="77363" _msthash="232">London</td>
+                <td _msttexthash="10270" _msthash="233">27</td>
+                <td _msttexthash="73515" _msthash="234">2011-05-07</td>
+                <td _msttexthash="51974" _msthash="235">$145,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="180284" _msthash="236">Gavin Cortez</td>
+                <td _msttexthash="148291" _msthash="237">Team Leader</td>
+                <td _msttexthash="199901" _msthash="238">San Francisco</td>
+                <td _msttexthash="9750" _msthash="239">22</td>
+                <td _msttexthash="73801" _msthash="240">2008-10-26</td>
+                <td _msttexthash="52741" _msthash="241">$235,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="225199" _msthash="242">Martena Mccray</td>
+                <td _msttexthash="353574" _msthash="243">Post-Sales support</td>
+                <td _msttexthash="133822" _msthash="244">Edinburgh</td>
+                <td _msttexthash="10348" _msthash="245">46</td>
+                <td _msttexthash="73593" _msthash="246">2011-03-09</td>
+                <td _msttexthash="52663" _msthash="247">$324,050</td>
+            </tr>
+            <tr>
+                <td _msttexthash="182286" _msthash="248">Unity Butler</td>
+                <td _msttexthash="343824" _msthash="249">Marketing Designer</td>
+                <td _msttexthash="199901" _msthash="250">San Francisco</td>
+                <td _msttexthash="10452" _msthash="251">47</td>
+                <td _msttexthash="74503" _msthash="252">2009-12-09</td>
+                <td _msttexthash="46280" _msthash="253">$85,675</td>
+            </tr>
+            <tr>
+                <td _msttexthash="249704" _msthash="254">Howard Hatfield</td>
+                <td _msttexthash="220142" _msthash="255">Office Manager</td>
+                <td _msttexthash="199901" _msthash="256">San Francisco</td>
+                <td _msttexthash="9919" _msthash="257">51</td>
+                <td _msttexthash="73944" _msthash="258">2008-12-16</td>
+                <td _msttexthash="52858" _msthash="259">$164,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="178724" _msthash="260">Hope Fuentes</td>
+                <td _msttexthash="137735" _msthash="261">Secretary</td>
+                <td _msttexthash="199901" _msthash="262">San Francisco</td>
+                <td _msttexthash="9828" _msthash="263">41</td>
+                <td _msttexthash="72033" _msthash="264">2010-02-12</td>
+                <td _msttexthash="54119" _msthash="265">$109,850</td>
+            </tr>
+            <tr>
+                <td _msttexthash="227266" _msthash="266">Vivian Harrell</td>
+                <td _msttexthash="414947" _msthash="267">Financial Controller</td>
+                <td _msttexthash="199901" _msthash="268">San Francisco</td>
+                <td _msttexthash="10114" _msthash="269">62</td>
+                <td _msttexthash="73502" _msthash="270">2009-02-14</td>
+                <td _msttexthash="52793" _msthash="271">$452,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="235586" _msthash="272">Timothy Mooney</td>
+                <td _msttexthash="220142" _msthash="273">Office Manager</td>
+                <td _msttexthash="77363" _msthash="274">London</td>
+                <td _msttexthash="10361" _msthash="275">37</td>
+                <td _msttexthash="72904" _msthash="276">2008-12-11</td>
+                <td _msttexthash="52299" _msthash="277">$136,200</td>
+            </tr>
+            <tr>
+                <td _msttexthash="281489" _msthash="278">Jackson Bradshaw</td>
+                <td _msttexthash="115336" _msthash="279">Director</td>
+                <td _msttexthash="94835" _msthash="280">New York</td>
+                <td _msttexthash="10426" _msthash="281">65</td>
+                <td _msttexthash="75166" _msthash="282">2008-09-26</td>
+                <td _msttexthash="54431" _msthash="283">$645,750</td>
+            </tr>
+            <tr>
+                <td _msttexthash="172705" _msthash="284">Olivia Liang</td>
+                <td _msttexthash="287352" _msthash="285">Support Engineer</td>
+                <td _msttexthash="135278" _msthash="286">Singapore</td>
+                <td _msttexthash="10322" _msthash="287">64</td>
+                <td _msttexthash="72176" _msthash="288">2011-02-03</td>
+                <td _msttexthash="52611" _msthash="289">$234,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="131495" _msthash="290">Bruno Nash</td>
+                <td _msttexthash="313183" _msthash="291">Software Engineer</td>
+                <td _msttexthash="77363" _msthash="292">London</td>
+                <td _msttexthash="10465" _msthash="293">38</td>
+                <td _msttexthash="72683" _msthash="294">2011-05-03</td>
+                <td _msttexthash="52728" _msthash="295">$163,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="258505" _msthash="296">Sakura Yamamoto</td>
+                <td _msttexthash="287352" _msthash="297">Support Engineer</td>
+                <td _msttexthash="63310" _msthash="298">Tokyo</td>
+                <td _msttexthash="10361" _msthash="299">37</td>
+                <td _msttexthash="75556" _msthash="300">2009-08-19</td>
+                <td _msttexthash="55250" _msthash="301">$139,575</td>
+            </tr>
+            <tr>
+                <td _msttexthash="157729" _msthash="302">Thor Walton</td>
+                <td _msttexthash="135928" _msthash="303">Developer</td>
+                <td _msttexthash="94835" _msthash="304">New York</td>
+                <td _msttexthash="10010" _msthash="305">61</td>
+                <td _msttexthash="73229" _msthash="306">2013-08-11</td>
+                <td _msttexthash="45279" _msthash="307">$98,540</td>
+            </tr>
+            <tr>
+                <td _msttexthash="170716" _msthash="308">Finn Camacho</td>
+                <td _msttexthash="287352" _msthash="309">Support Engineer</td>
+                <td _msttexthash="199901" _msthash="310">San Francisco</td>
+                <td _msttexthash="10452" _msthash="311">47</td>
+                <td _msttexthash="74776" _msthash="312">2009-07-07</td>
+                <td _msttexthash="44434" _msthash="313">$87,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="198770" _msthash="314">Serge Baldwin</td>
+                <td _msttexthash="285844" _msthash="315">Data Coordinator</td>
+                <td _msttexthash="135278" _msthash="316">Singapore</td>
+                <td _msttexthash="10322" _msthash="317">64</td>
+                <td _msttexthash="73892" _msthash="318">2012-04-09</td>
+                <td _msttexthash="55120" _msthash="319">$138,575</td>
+            </tr>
+            <tr>
+                <td _msttexthash="195676" _msthash="320">Zenaida Frank</td>
+                <td _msttexthash="313183" _msthash="321">Software Engineer</td>
+                <td _msttexthash="94835" _msthash="322">New York</td>
+                <td _msttexthash="10218" _msthash="323">63</td>
+                <td _msttexthash="72085" _msthash="324">2010-01-04</td>
+                <td _msttexthash="52897" _msthash="325">$125,250</td>
+            </tr>
+            <tr>
+                <td _msttexthash="231387" _msthash="326">Zorita Serrano</td>
+                <td _msttexthash="313183" _msthash="327">Software Engineer</td>
+                <td _msttexthash="199901" _msthash="328">San Francisco</td>
+                <td _msttexthash="10439" _msthash="329">56</td>
+                <td _msttexthash="72566" _msthash="330">2012-06-01</td>
+                <td _msttexthash="51623" _msthash="331">$115,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="251732" _msthash="332">Jennifer Acosta</td>
+                <td _msttexthash="650416" _msthash="333">Junior Javascript Developer</td>
+                <td _msttexthash="133822" _msthash="334">Edinburgh</td>
+                <td _msttexthash="10036" _msthash="335">43</td>
+                <td _msttexthash="72020" _msthash="336">2013-02-01</td>
+                <td _msttexthash="45019" _msthash="337">$75,650</td>
+            </tr>
+            <tr>
+                <td _msttexthash="178633" _msthash="338">Cara Stevens</td>
+                <td _msttexthash="260416" _msthash="339">Sales Assistant</td>
+                <td _msttexthash="94835" _msthash="340">New York</td>
+                <td _msttexthash="10348" _msthash="341">46</td>
+                <td _msttexthash="72956" _msthash="342">2011-12-06</td>
+                <td _msttexthash="52910" _msthash="343">$145,600</td>
+            </tr>
+            <tr>
+                <td _msttexthash="256568" _msthash="344">Hermione Butler</td>
+                <td _msttexthash="314197" _msthash="345">Regional Director</td>
+                <td _msttexthash="77363" _msthash="346">London</td>
+                <td _msttexthash="10452" _msthash="347">47</td>
+                <td _msttexthash="72319" _msthash="348">2011-03-21</td>
+                <td _msttexthash="53586" _msthash="349">$356,250</td>
+            </tr>
+            <tr>
+                <td _msttexthash="128479" _msthash="350">Lael Greer</td>
+                <td _msttexthash="462410" _msthash="351">Systems Administrator</td>
+                <td _msttexthash="77363" _msthash="352">London</td>
+                <td _msttexthash="9646" _msthash="353">21</td>
+                <td _msttexthash="74321" _msthash="354">2009-02-27</td>
+                <td _msttexthash="52026" _msthash="355">$103,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="252850" _msthash="356">Jonas Alexander</td>
+                <td _msttexthash="135928" _msthash="357">Developer</td>
+                <td _msttexthash="199901" _msthash="358">San Francisco</td>
+                <td _msttexthash="9633" _msthash="359">30</td>
+                <td _msttexthash="73294" _msthash="360">2010-07-14</td>
+                <td _msttexthash="44317" _msthash="361">$86,500</td>
+            </tr>
+            <tr>
+                <td _msttexthash="147810" _msthash="362">Shad Decker</td>
+                <td _msttexthash="314197" _msthash="363">Regional Director</td>
+                <td _msttexthash="133822" _msthash="364">Edinburgh</td>
+                <td _msttexthash="9919" _msthash="365">51</td>
+                <td _msttexthash="73151" _msthash="366">2008-11-13</td>
+                <td _msttexthash="52182" _msthash="367">$183,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="195000" _msthash="368">Michael Bruce</td>
+                <td _msttexthash="416819" _msthash="369">Javascript Developer</td>
+                <td _msttexthash="135278" _msthash="370">Singapore</td>
+                <td _msttexthash="10478" _msthash="371">29</td>
+                <td _msttexthash="74074" _msthash="372">2011-06-27</td>
+                <td _msttexthash="52182" _msthash="373">$183,000</td>
+            </tr>
+            <tr>
+                <td _msttexthash="175123" _msthash="374">Donna Snider</td>
+                <td _msttexthash="297700" _msthash="375">Customer Support</td>
+                <td _msttexthash="94835" _msthash="376">New York</td>
+                <td _msttexthash="10270" _msthash="377">27</td>
+                <td _msttexthash="72813" _msthash="378">2011-01-25</td>
+                <td _msttexthash="51233" _msthash="379">$112,000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th _msttexthash="43069" _msthash="380">Name</th>
+                <th _msttexthash="117676" _msthash="381">Position</th>
+                <th _msttexthash="73294" _msthash="382">Office</th>
+                <th _msttexthash="28444" _msthash="383">Age</th>
+                <th _msttexthash="135174" _msthash="384">Start date</th>
+                <th _msttexthash="78065" _msthash="385">Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+
+            
+
+            
+            <script src="https://code.jquery.com/jquery-3.7.0.js" type="text/Javascript"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" type="text/Javascript"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" type="text/Javascript"></script>
+            <script src="https://cdn.datatables.net/2.0.5/js/dataTables.js" type="text/Javascript"></script>
+            <script src="https://cdn.datatables.net/2.0.5/js/dataTables.bootstrap4.js" type="text/Javascript"></script>
+
+            <script>
+                let table = new DataTable('#myTable',{
+                    language: {
+                        url: "../public/json/mx.json"}        
+                });
+
+                $(document).ready(function () {
+                    $('#myTable').DataTable();
+                });
+            </script>
+            
+            
+</body>
+
+</html>

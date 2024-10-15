@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+
+<head>
+    <title>CRUD PRODUCTOS</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!--ESTILOS ADICIONALES AGREGADOS-->
+    <link rel="stylesheet" href="/resource/css/crudproductos/productedit.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- LINK DE BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8.3.1/swiper-bundle.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/2.0.5/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- ====== LINKS EXTERNOS ====== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <link href="glightbox/css/glightbox.min.css" rel="stylesheet"> -->
+
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!--ESTILOS ADICIONALES AGREGADOS-->
+
+</head>
+
+<body>
+
+
+
+    <% if(login) { %>
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class='bx bxl-codepen icon'></i>
+                <div class="logo_name">Urban Shoes</div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search...">
+                    <span class="tooltip">Buscar</span>
+                </li>
+                <li>
+                    <a href="/admin">
+                        <i class='bx bxs-dashboard'></i>
+                        <span class="links_name">Principal</span>
+                    </a>
+                    <span class="tooltip">Principal</span>
+                </li>
+                <li class="parent">
+                    <a href="#">
+                        <i class='bx bxs-group'></i>
+                        <span class="links_name">Stakeholders</span>
+                    </a>
+                    <span class="tooltip">Stakeholders</span>
+                    <i id="abrirsubstakeholders" class="bx bxs-chevron-left arrow"></i>
+                    <ul class="sub-menu" id="submenu-stakeholders">
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-user-circle'></i>
+                                Clientes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bxs-truck'></i>
+                                Proveedor
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-user'></i>
+                                Usuarios
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent">
+                    <a href="#">
+                        <i class='bx bxs-box'></i>
+                        <span class="links_name">Inventario</span>
+                    </a>
+                    <span class="tooltip">Inventario</span>
+                    <i id="abrirsubinventario" class="bx bxs-chevron-left arrow"></i>
+                    <ul class="sub-menu" id="submenu-inventario">
+                        <li>
+                            <a href="#">
+                                <i class='bx bxs-category'></i>
+                                Categorias
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bxs-package'></i>
+                                Productos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bxs-purchase-tag' ></i>
+                                Medidas
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="parent">
+                    <a href="#">
+                        <i class='bx bxs-file'></i>
+                        <span class="links_name">Reportes</span>
+                    </a>
+                    <span class="tooltip">Reportes</span>
+                    <i id="abrirsubreporte" class="bx bxs-chevron-left arrow"></i>
+                    <ul class="sub-menu" id="submenu-reporte">
+                        <li>
+                            <a href="#">
+                                <i class='bx bxs-file-pdf' ></i>
+                                Clientes
+                            </a>
+                            <a href="#">
+                                <i class='bx bxs-file-pdf' ></i>
+                                Proveedores
+                            </a>
+                            <a href="#">
+                                <i class='bx bxs-file-pdf' ></i>
+                                Productos
+                            </a>
+                            <a href="#">
+                                <i class='bx bxs-file-pdf' ></i>
+                                Categorias
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-layer' ></i>
+                        <span class="links_name">Reporte de Ventas</span>
+                    </a>
+                    <span class="tooltip">Reporte de Ventas</span>
+                    <i id="abrirsubreporteventa" class="bx bxs-chevron-left arrow"></i>
+                    <ul class="sub-menu" id="submenu-reporteventa">
+                        <li>
+                            <a href="#">
+                                <i class='bx bxs-receipt' ></i>
+                                Ventas
+                            </a>
+                            <a href="#">
+                                <i class='bx bxs-notepad' ></i>
+                                Informe de Ventas
+                            </a>
+                            <a href="#">
+                                <i class='bx bx-scatter-chart'></i>
+                                Gráfico de Ventas
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-cart-alt'></i>
+                        <span class="links_name">Punto de Venta</span>
+                    </a>
+                    <span class="tooltip">Punto de Venta</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-detail'></i>
+                        <span class="links_name">Consultas</span>
+                    </a>
+                    <span class="tooltip">Consultas</span>
+                    <i id="abrirsubconsultas" class="bx bxs-chevron-left arrow"></i>
+                    <ul class="sub-menu" id="submenu-consultas">
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-plus'></i>
+                                Venta Mayor
+                            </a>
+                            <a href="#">
+                                <i class='bx bx-plus'></i>
+                                Venta Menor
+                            </a>
+                            <a href="#">
+                                <i class='bx bx-plus'></i>
+                                Producto mas vendido
+                            </a>
+                            <a href="#">
+                                <i class='bx bx-plus'></i>
+                                Producto menos vendido
+                            </a>
+                            <a href="#">
+                                <i class='bx bx-plus'></i>
+                                Productos sin Stock
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-cog'></i>
+                        <span class="links_name">Setting</span>
+                    </a>
+                    <span class="tooltip">Setting</span>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-circle'></i>
+                        <span class="links_name">
+                            <%= name %>
+                        </span>
+                    </a>
+                    <span class="tooltip">
+                        <%= name %>
+                    </span>
+                </li>
+
+                <li class="profile">
+                    <div class="profile-details">
+                        <i class='bx bx-export'></i>
+                        <div class="name_job">
+                            <div class="name">Logout</div>
+                        </div>
+                    </div>
+                    <a href="/logout">
+                        <i class='bx bx-log-out' id="log_out"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <% } %>
+
+            <section class="home-section">
+                <div class="col-md-13">
+                    <div class="box-container mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h1 class="jeje text-center">Registrar Producto</h1>
+                        </div>
+                        <div class="modesys">
+                            <div class="select-image">
+                                <img src="/resource/img/plus/dark.svg" style="width: 169px; height: 80px;"
+                                    alt="Dark Mode" id="darkImage">
+                                <img src="/resource/img/plus/light.svg" style="width: 169px; height: 80px;"
+                                    alt="Light Mode" id="lightImage">
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="input">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <% resultsp.forEach((productos)=> { %>
+                <div class="col-md-13">
+                    <form action="/updateproduct" method="POST" enctype="multipart/form-data" id="form2"
+                        class="form_container">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="id" class="form-label" hidden>Id</label>
+                                    <input type="text" class="form-control" id="id" name="id" tabindex="1"
+                                        value="<%=productos.id %>" hidden>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="id" class="form-label">Nombre:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Producto" name="nombre" type="text" class="form-control"
+                                                id="nombre" value="<%=productos.nombre%>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="id" class="form-label">Descripción:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Excelente" name="descripcion" type="text"
+                                                class="form-control" id="descripcion" value="<%=productos.descripcion%>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="id" class="form-label">Slug:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Slug" name="slug" type="text" class="form-control"
+                                                id="slug" value="<%=productos.slug%>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="id" class="form-label">Precio:</label>
+                                        <div class="input_container">
+                                            <input placeholder="S/20" type="number" class="form-control" id="precio"
+                                                name="precio" value="<%=productos.precio%>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="id" class="form-label">Marca:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Dunkelvolk" type="text" class="form-control" id="marca"
+                                                name="marca" value="<%=productos.marca%>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="id" class="form-label">Color:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Dunkelvolk" type="text" class="form-control" id="color"
+                                                name="color" value="<%=productos.color%>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="genero" class="form-label">Género:</label>
+                                        <select id="genero" name="genero" class="form-control">
+                                                <option <%= productos.genero=='hombre'? "selected":'' %> value="hombre" selected>Hombre</option>
+                                                <option <%= productos.genero=='mujer'? "selected":'' %> value="mujer">Mujer</option>
+                                                <option <%= productos.genero=='unisex'? "selected":'' %> value="unisex">Unisex</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="categoria" class="form-label">Categoría:</label>
+                                        <select id="categoria" name="categoria" class="form-control">
+                                                <option <%= productos.categoria=='zapatilla'? "selected":'' %> value="zapatilla" selected>Zapatilla</option>
+                                                <option <%= productos.categoria=='zapato'? "selected":'' %> value="zapato">Zapato</option>
+                                                <option <%= productos.categoria=='botas'? "selected":'' %> value="botas">Botas</option>
+                                                <option <%= productos.categoria=='sandalia'? "selected":'' %> value="sandalia">Sandalia</option>
+                                                <option <%= productos.categoria=='camisa'? "selected":'' %> value="camisa">Camisa</option>
+                                                <option <%= productos.categoria=='polo'? "selected":'' %> value="polo">Polo</option>
+                                                <option <%= productos.categoria=='polera'? "selected":'' %> value="polera">Polera</option>
+                                                <option <%= productos.categoria=='taco'? "selected":'' %> value="taco">Taco</option>
+                                                <option <%= productos.categoria=='chompa'? "selected":'' %> value="chompa">Chompa</option>
+                                                <option <%= productos.categoria=='short'? "selected":'' %> value="short">Short</option>
+                                                <option <%= productos.categoria=='pantalon'? "selected":'' %> value="pantalon">Pantalon</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <% resultst.forEach((tallasproduct)=> { %>
+                                    <% if(productos.categoria == 'zapatilla' || productos.categoria == 'zapato' || productos.categoria == 'botas'|| productos.categoria == 'sandalias' || productos.categoria == 'taco'){ %>
+                                <div id="tallasCalzado">
+                                    <% } else { %>
+                                <div id="tallasCalzado" style="display: none;">
+                                    <% } %>
+                                <label for="id" class="form-label">Tallas:</label>
+                                
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <label for="id" class="form-label">39:</label>
+                                            <div class="input_container">
+                                                <input placeholder="1" type="number" class="form-control" id="t39"
+                                                    name="t39" value="<%=tallasproduct.t39%>" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="id" class="form-label">40:</label>
+                                            <div class="input_container">
+                                                <input placeholder="1" type="number" class="form-control" id="t40"
+                                                    name="t40" value="<%=tallasproduct.t40%>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="id" class="form-label">41:</label>
+                                            <div class="input_container">
+                                                <input placeholder="1" type="number" class="form-control" id="t41"
+                                                    name="t41" value="<%=tallasproduct.t41%>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="id" class="form-label">42:</label>
+                                            <div class="input_container">
+                                                <input placeholder="1" type="number" class="form-control" id="t42"
+                                                    name="t42" value="<%=tallasproduct.t42%>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Fin Contenedor de tallas para zapatillas -->
+                                <!-- Contenedor de tallas para chompas -->
+                                    <% if(productos.categoria == 'camisa' || productos.categoria == 'polo' || productos.categoria == 'polera' || productos.categoria == 'chompa'){ %>
+                                    <div id="tallasRopa">
+                                    <% } else { %>
+                                        <div id="tallasRopa" style="display: none;">
+                                    <% } %>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <label for="id" class="form-label">S:</label>
+                                            <div class="input_container">
+                                                <input placeholder="1" type="number" class="form-control" id="ts" name="ts" value="<%=tallasproduct.ts%>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="id" class="form-label">M:</label>
+                                            <div class="input_container">
+                                                <input placeholder="1" type="number" class="form-control" id="tm" name="tm" value="<%=tallasproduct.tm%>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="id" class="form-label">L:</label>
+                                            <div class="input_container">
+                                                <input placeholder="1" type="number" class="form-control" id="tl" name="tl" value="<%=tallasproduct.tl%>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="id" class="form-label">XL:</label>
+                                            <div class="input_container">
+                                                <input placeholder="1" type="number" class="form-control" id="txl" name="txl" value="<%=tallasproduct.txl%>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                <!-- Fin Contenedor de tallas para chompas -->
+                                <% resultsi.forEach((imagenesproduct)=> { %>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="imagen1" class="form-label">Imagen Principal:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control" id="imagen1" onchange="mostrarVistaPrevia('imagen1', 'vistaPreviaImagen1')">
+                                            <label class="form-control text-center" id="labelimg1" name="labelimg" for="imagen"><%=imagenesproduct.imagen1 %></label>
+                                            <div id="vistaPreviaContainer1" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen1" src="/resource/img/product/<%=imagenesproduct.imagen1 %>" alt="<%=imagenesproduct.imagen1 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="imagen2" class="form-label">Imagen 2:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control" id="imagen2" onchange="mostrarVistaPrevia('imagen2', 'vistaPreviaImagen2')">
+                                            <label class="form-control text-center" id="labelimg2" name="labelimg" for="imagen"><%=imagenesproduct.imagen2 %></label>
+                                            <div id="vistaPreviaContainer2" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen2" src="/resource/img/product/<%=imagenesproduct.imagen2 %>" alt="<%=imagenesproduct.imagen2 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="imagen3" class="form-label">Imagen 3:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control"
+                                                id="imagen3"
+                                                onchange="mostrarVistaPrevia('imagen3', 'vistaPreviaImagen3')">
+                                                <label class="form-control text-center" id="labelimg3" name="labelimg" for="imagen"><%=imagenesproduct.imagen3 %></label>
+                                            <div id="vistaPreviaContainer3" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen3" src="/resource/img/product/<%=imagenesproduct.imagen3 %>" alt="<%=imagenesproduct.imagen3 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="vistaPreviaImagen4" class="form-label">Imagen 4:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control"
+                                                id="imagen4"
+                                                onchange="mostrarVistaPrevia('imagen4', 'vistaPreviaImagen4')">
+                                                <label class="form-control text-center" id="labelimg4" name="labelimg" for="imagen"><%=imagenesproduct.imagen4 %></label>
+                                            <div id="vistaPreviaContainer4" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen4" src="/resource/img/product/<%=imagenesproduct.imagen4 %>" alt="<%=imagenesproduct.imagen4 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="imagen5" class="form-label">Imagen 5:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control"
+                                                id="imagen5"
+                                                onchange="mostrarVistaPrevia('imagen5', 'vistaPreviaImagen5')">
+                                                <label class="form-control text-center" id="labelimg5" name="labelimg" for="imagen"><%=imagenesproduct.imagen5 %></label>
+                                            <div id="vistaPreviaContainer5" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen5" src="/resource/img/product/<%=imagenesproduct.imagen5 %>" alt="<%=imagenesproduct.imagen5 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="imagen6" class="form-label">Imagen 6:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control"
+                                                id="imagen6"
+                                                onchange="mostrarVistaPrevia('imagen6', 'vistaPreviaImagen6')">
+                                                <label class="form-control text-center" id="labelimg6" name="labelimg" for="imagen"><%=imagenesproduct.imagen6 %></label>
+                                            <div id="vistaPreviaContainer6" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen6" src="/resource/img/product/<%=imagenesproduct.imagen6 %>" alt="<%=imagenesproduct.imagen6 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="imagen7" class="form-label">Imagen 7:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control"
+                                                id="imagen7"
+                                                onchange="mostrarVistaPrevia('imagen7', 'vistaPreviaImagen7')">
+                                                <label class="form-control text-center" id="labelimg7" name="labelimg" for="imagen"><%=imagenesproduct.imagen7 %></label>    
+                                            <div id="vistaPreviaContainer7" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen7" src="/resource/img/product/<%=imagenesproduct.imagen7 %>" alt="<%=imagenesproduct.imagen7 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="imagen8" class="form-label">Imagen 8:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control"
+                                                id="imagen8"
+                                                onchange="mostrarVistaPrevia('imagen8', 'vistaPreviaImagen8')">
+                                                <label class="form-control text-center" id="labelimg8" name="labelimg" for="imagen"><%=imagenesproduct.imagen8 %></label>
+                                            <div id="vistaPreviaContainer8" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen8" src="/resource/img/product/<%=imagenesproduct.imagen8 %>" alt="<%=imagenesproduct.imagen8 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="imagen9" class="form-label">Imagen 9:</label>
+                                        <div class="input_container">
+                                            <input placeholder="Imagen" name="imagen" type="file" class="form-control"
+                                                id="imagen9"
+                                                onchange="mostrarVistaPrevia('imagen9', 'vistaPreviaImagen9')">
+                                                <label class="form-control text-center" id="labelimg9" name="labelimg" for="imagen"><%=imagenesproduct.imagen9 %></label>
+                                            <div id="vistaPreviaContainer9" class="vistaPreviaContainer text-center">
+                                                <img id="vistaPreviaImagen9" src="/resource/img/product/<%=imagenesproduct.imagen9 %>" alt="<%=imagenesproduct.imagen9 %>"
+                                                    class="vistaPreviaImagen img-thumbnail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                <div class="row mb-3">
+                                    <div class="col-md-12 text-center">
+                                        <input type="submit" id="btnF2" value="Agregar" class="btn btn-primary">
+                                        <a href="/product/productview" id="btnF2" class="btn btn-secondary">Cancelar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <% }) %>
+            </section>
+            
+            <!-- Previsualizacion de las imagenes -->
+            <script>
+                function mostrarVistaPrevia(idInput, idImagen) {
+                    var archivo = document.getElementById(idInput).files[0];
+                    var vistaPrevia = document.getElementById(idImagen);
+                    if (archivo) {
+                        var lector = new FileReader();
+                        lector.onload = function (e) {
+                            vistaPrevia.src = e.target.result;
+                            vistaPrevia.style.display = 'block';
+                        }
+                        lector.readAsDataURL(archivo);
+                    }
+                }  
+            </script>
+            <!-- Abrir el navbar -->
+            <script>
+                let sidebar = document.querySelector(".sidebar");
+                let closeBtn = document.querySelector("#btn");
+                let searchBtn = document.querySelector(".bx-search");
+
+                closeBtn.addEventListener("click", () => {
+                    sidebar.classList.toggle("open");
+                    menuBtnChange();
+                });
+
+                searchBtn.addEventListener("click", () => {
+                    sidebar.classList.toggle("open");
+                    menuBtnChange();
+                });
+
+                function menuBtnChange() {
+                    if (sidebar.classList.contains("open")) {
+                        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+                    } else {
+                        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+                    }
+                }
+            </script>
+            <!-- Modo Dark -->
+            <script>
+                // Detectar la preferencia del sistema
+                const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                // Obtener las imágenes
+                const darkImage = document.getElementById('darkImage');
+                const lightImage = document.getElementById('lightImage');
+
+                // Función para aplicar el tema oscuro
+                function applyDarkMode() {
+                    document.body.classList.add('dark-mode');
+                    darkImage.style.display = 'none';
+                    lightImage.style.display = 'block';
+                    document.getElementById('input').checked = true;
+                }
+
+                // Función para aplicar el tema claro
+                function applyLightMode() {
+                    document.body.classList.remove('dark-mode');
+                    darkImage.style.display = 'block';
+                    lightImage.style.display = 'none';
+                }
+
+                // Aplicar el tema según la preferencia guardada o la preferencia del sistema
+                const selectedTheme = localStorage.getItem('theme');
+                if (selectedTheme === 'dark' || (selectedTheme === null && prefersDarkMode)) {
+                    applyDarkMode();
+                } else {
+                    applyLightMode();
+                }
+
+                // Cambiar el tema cuando se active el interruptor
+                document.getElementById('input').addEventListener('change', () => {
+                    if (document.body.classList.contains('dark-mode')) {
+                        applyLightMode();
+                        localStorage.setItem('theme', 'light'); // Guardar el tema seleccionado en el almacenamiento local
+                    } else {
+                        applyDarkMode();
+                        localStorage.setItem('theme', 'dark'); // Guardar el tema seleccionado en el almacenamiento local
+                    }
+                });   
+            </script>
+
+            <!-- Sub Menu Producto -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const submenuToggle = document.getElementById('abrirsubproducto');
+                    const submenu = document.getElementById('submenu-productos');
+
+                    submenuToggle.addEventListener('click', function (event) {
+                        event.stopPropagation(); // Evita la redirección al hacer clic en el triángulo
+                        this.classList.toggle('rotated');
+                        submenu.classList.toggle('show');
+                    });
+                });
+            </script>
+            <!-- Sub Menu Persona -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const submenuToggle = document.getElementById('abrirsubpersona');
+                    const submenu = document.getElementById('submenu-personas');
+
+                    submenuToggle.addEventListener('click', function (event) {
+                        event.stopPropagation(); // Evita la redirección al hacer clic en el triángulo
+                        this.classList.toggle('rotated');
+                        submenu.classList.toggle('show');
+                    });
+                });
+            </script>
+            <!-- Slug para cada producto -->
+            <script>
+                document.getElementById('descripcion').addEventListener('input', function () {
+                    var nombre = this.value.toLowerCase().trim();
+                    // Reemplazar espacios en blanco con guiones
+                    var slug = nombre.replace(/\s+/g, '-');
+                    // Eliminar caracteres especiales
+                    slug = slug.replace(/[^\w\-]+/g, '');
+                    document.getElementById('slug').value = slug;
+                });
+            </script>
+            <!-- Modificar las tallas -->
+            <script>
+                    const categoriaSelect = document.getElementById('categoria');
+                    const tallasCalzado = document.getElementById('tallasCalzado');
+                    const tallasRopa = document.getElementById('tallasRopa');
+                    categoriaSelect.addEventListener('change', function () {
+                        const categoriaSeleccionada = categoriaSelect.value;
+                        // Ocultar todos los contenedores de tallas
+                        tallasCalzado.style.display = 'none';
+                        tallasRopa.style.display = 'none';
+                        // Mostrar el contenedor de tallas correspondiente a la categoría seleccionada
+                        if (categoriaSeleccionada === 'zapatilla' || categoriaSeleccionada === 'sandalia') {
+                            tallasCalzado.style.display = 'block';
+                        } else if (categoriaSeleccionada === 'polera' || categoriaSeleccionada === 'polo' || categoriaSeleccionada === 'camisa') {
+                            tallasRopa.style.display = 'block';
+                        }
+                    });
+            </script>
+            <!-- OCULTAR EL SELECCIONAR -->
+            <script>
+                const il1 = document.getElementById('labelimg1');
+                const il2 = document.getElementById('labelimg2');
+                const il3 = document.getElementById('labelimg3');
+                const il4 = document.getElementById('labelimg4');
+                const il5 = document.getElementById('labelimg5');
+                const il6 = document.getElementById('labelimg6');
+                const il7 = document.getElementById('labelimg7');
+                const il8 = document.getElementById('labelimg8');
+                const il9 = document.getElementById('labelimg9');
+                document.getElementById('imagen1').addEventListener('change', () => {il1.style.display = 'none';});
+                document.getElementById('imagen2').addEventListener('change', () => {il2.style.display = 'none';});
+                document.getElementById('imagen3').addEventListener('change', () => {il3.style.display = 'none';});
+                document.getElementById('imagen4').addEventListener('change', () => {il4.style.display = 'none';});
+                document.getElementById('imagen5').addEventListener('change', () => {il5.style.display = 'none';});
+                document.getElementById('imagen6').addEventListener('change', () => {il6.style.display = 'none';});
+                document.getElementById('imagen7').addEventListener('change', () => {il7.style.display = 'none';});
+                document.getElementById('imagen8').addEventListener('change', () => {il8.style.display = 'none';});
+                document.getElementById('imagen9').addEventListener('change', () => {il9.style.display = 'none';});
+            </script>
+
+
+            <!-- SCRIPT BOOTSTRAP -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+            <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8.3.1/swiper-bundle.min.js"></script>
+            <script src="https://kit.fontawesome.com/1f4346c153.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
