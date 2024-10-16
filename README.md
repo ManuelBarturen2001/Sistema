@@ -18,6 +18,7 @@
 # Ingresar la contraseña: barturen
 # CREATE USER 'barturen'@'%' IDENTIFIED BY 'barturen';
 # GRANT ALL PRIVILEGES ON sistema.* TO 'barturen'@'%';
+# ALTER USER 'barturen'@'%' IDENTIFIED WITH mysql_native_password BY 'barturen';
 # FLUSH PRIVILEGES;
 
 # Luego de haber creado el usuario ejecutamos esto 
