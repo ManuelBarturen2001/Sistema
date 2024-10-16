@@ -17,11 +17,11 @@
 # docker exec -it sistema-mysqldb-1 mysql -u root -p
 # Ingresar la contraseña: barturen
 # CREATE USER 'barturen'@'%' IDENTIFIED BY 'barturen';
-# GRANT ALL PRILEGES ON sistema.* TO 'barturen'@'%';
+# GRANT ALL PRIVILEGES ON sistema.* TO 'barturen'@'%';
 # FLUSH PRIVILEGES;
 
 # Luego de haber creado el usuario ejecutamos esto 
-# SI NO EXISTE LA BASE DE DATOS 'sistema' EJECTUAMOS:
+# SI NO EXISTE LA BASE DE DATOS 'sistema' EJECTUAMOS EN EL POWERSHELL:
 
 # docker cp "F:\JUAN\BackupDBProyectos\sistema.sql" sistema-mysqldb-1:/sistema.sql
 # o tambien puede ser la ruta del mismo sistema por ejemplo docker cp "..\Sistema\sistema.sql" sistema-mysqldb-1:/sistema.sql

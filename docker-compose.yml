@@ -11,7 +11,7 @@ services:
       - DB_DATABASE=sistema
       - DB_PORT=3306
     ports:
-      - "4000:4000"
+      - "3000:4000"
 
   mysqldb:
     image: mysql:8.0.39
